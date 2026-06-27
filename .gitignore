@@ -4,6 +4,18 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+
+# =========================
+# Secrets / Environment
+# =========================
+.env
+.env.*
+!.env.example
+
+# Spring local config
+application-local.properties
+application-secret.properties
+
 ### STS ###
 .apt_generated
 .classpath
