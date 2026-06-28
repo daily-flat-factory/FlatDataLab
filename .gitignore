@@ -16,6 +16,14 @@ target/
 application-local.properties
 application-secret.properties
 
+### Spring Boot Configuration ###
+# 로컬 개발용 및 비밀키가 포함된 설정 파일 제외
+src/main/resources/application-local.yml
+src/test/resources/application-local.yml
+
+# (선택) 만약 기존의 properties 파일 잔재가 걱정된다면 함께 추가
+src/test/resources/application-local.properties
+
 ### STS ###
 .apt_generated
 .classpath
