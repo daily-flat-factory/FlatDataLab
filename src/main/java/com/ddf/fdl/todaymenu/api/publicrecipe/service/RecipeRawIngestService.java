@@ -34,14 +34,14 @@ public class RecipeRawIngestService {
 
             if (!rows.isArray()){
                 JsonNode result = cookRcp.path("RESULT");
-                String message = result.path("MSG").asText("알 수 없는 API 응답 형식입니다.");
+                String message = result.path("MSG").asString("알 수 없는 API 응답 형식입니다.");
                 throw new IllegalStateException("공공 레시피 API 응답 형식이 예상과 다릅니다. 메시지: " + message);
             }
         
             int savedCount = 0;
 
             for (JsonNode row : rows) {
-                String rcpSeq = row.path("RCP_SEQ").asText();
+                String rcpSeq = row.path("RCP_SEQ").asString();
                 if (rcpSeq == null || rcpSeq.isBlank()) {
                     continue; // RCP_SEQ가 없으면 저장하지 않음
                 }
